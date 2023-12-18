@@ -31,5 +31,10 @@
 
 
 
-    setcookie("test","xxxxx",time()+60);
+    // setcookie("test","xxxxx",time()+60);
+    if(!isset($_COOKIE['zap'])){
+        setcookie('zap',time()+3600);
+    }
+    print_r($_COOKIE['zap']);
+    
 ?>  
