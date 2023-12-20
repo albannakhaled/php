@@ -1,22 +1,25 @@
 <?php
-include_once ("formcity.php");  
 include_once ('initSession.php');
 
-$errormessage = "";
+
+$msgerr = "";
 if (isset($_POST['submit'])){
 	
 	if (!empty($_POST['city'])){
 		
 		$city = new City($_POST['city']);
 		$cityCorona->listCity[] = $city;
+		
 	}
 	else 
-		$errormessage = "should be enter a city !";
+		$msgerr = "You have to enter a city";
 			
 }
 
 if (isset($_POST['back'])) 
 {
-	header("location:mainPage.php");
+	header("location:menu.php ");
 }
+include_once ("formCity.php");
+
 ?> 

@@ -1,7 +1,7 @@
-<?
+<?php
 include_once ('initSession.php');
 
-$jour = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+$jour = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
 
 if( isset($_POST['add'] ))
 {	
@@ -19,13 +19,11 @@ if( isset($_POST['add'] ))
 
 ?>
 <html>
-<head>
-<title></title>
-</html>
+
 <body>
 <form action ='corona.php' method='post'>
 <table border=1>
-<?
+<?php
 
 for($i=-1; $i<count($cityCorona->listCity); $i++)
 {
@@ -42,12 +40,19 @@ for($i=-1; $i<count($cityCorona->listCity); $i++)
 		{
 			echo "<td> <input type ='text'  name='check_list[$i][$j]'></td>";
 		}
-	}
+	}	
 		echo "</tr>";
 	
+}
+if (isset($_POST['backk'])) 
+{
+	header("location:menu.php ");
 }
 ?>
 </table>
 <input type='submit' name ='add' value='Add'>
+<input type='submit' name ='backk' value='back'>
+
 </form>
 </body>
+</html>
